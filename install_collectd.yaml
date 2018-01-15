@@ -1,0 +1,15 @@
+#!/usr/bin/env ansible-playbook
+- hosts: MonitoringSystem
+  tasks:  
+  - name: install the latest version of Collectd
+    yum:
+     name: collectd
+     state: latest
+  - name: install the latest version of Influxdb
+    yum:
+     name: influxdb
+     state: latest
+  - name: install the latest version of Grafana
+    yum:
+      name: grafana
+      state: latest

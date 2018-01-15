@@ -1,0 +1,10 @@
+#!/usr/bin/env ansible-playbook
+- hosts: MonitoringSystem
+  tasks:  
+  - copy:
+      src: ./resources/collectd.conf
+      dest: /etc/collectd.conf
+      owner: root
+      group: root
+      mode: 0644
+  

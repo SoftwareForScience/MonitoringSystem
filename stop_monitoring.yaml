@@ -1,0 +1,9 @@
+#!/usr/bin/env ansible-playbook
+- hosts: MonitoringSystem
+  tasks: 
+    - name: Stop collectd
+      systemd: state=stopped name=collectd 
+    - name: Stop influxdb
+      systemd: state=stopped name=influxdb 
+    - name: Stop Grafana
+      systemd: state=stopped name=grafana-server
