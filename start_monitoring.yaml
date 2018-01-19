@@ -7,3 +7,14 @@
       systemd: state=started name=influxdb 
     - name: Starts Grafana
       systemd: state=started name=grafana-server
+    - name: Starts ElasticSearch
+      systemd: state=started name=elasticsearch
+    - name: Starts Kibana
+      systemd: state=started name=kibana      
+    - name: Starts logstash 
+      systemd: state=started name=logstash
+      
+      # command: bin/logstash -f /etc/logstash/conf.d/logstash.conf --path.settings=/etc/logstash
+      # args:
+      #   chdir: /usr/share/logstash
+      #state=started name=logstash

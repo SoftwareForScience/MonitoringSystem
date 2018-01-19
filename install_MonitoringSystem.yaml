@@ -1,0 +1,31 @@
+#!/usr/bin/env ansible-playbook
+- hosts: MonitoringSystem
+  tasks:  
+    - name: install the 5.8.0 version of Collectd
+      yum:
+       name: collectd-5.8.0
+       state: latest
+  # - name: install the latest version of Influxdb
+  #   yum:
+  #    name: influxdb
+  #    state: latest
+  # - name: install the latest version of Grafana
+  #   yum:
+  #    name: grafana
+  #    state: latest
+    - name: install the 5.6 version of Elasticsearch
+      yum:
+       name: elasticsearch
+       state: present
+    - name: install the 5.6 version of Logstash
+      yum:
+       name: logstash
+       state: present
+    - name: install the 5.6 version of Kibana
+      yum:
+       name: kibana
+      state: present
+    - name: install the latest version of Kapacitor
+      yum:
+       name: kapacitor
+       state: latest

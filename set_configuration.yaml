@@ -1,10 +1,45 @@
 #!/usr/bin/env ansible-playbook
 - hosts: MonitoringSystem
   tasks:  
+  # - copy:
+  #     src: ./resources/collectd.conf
+  #     dest: /etc/collectd.conf
+  #     owner: root
+  #     group: root
+  #     mode: 0644
   - copy:
-      src: ./resources/collectd.conf
-      dest: /etc/collectd.conf
+     src: ./resources/influxdb.conf
+      dest: /etc/influxdb/influxdb.conf
       owner: root
       group: root
       mode: 0644
-  
+  - copy:
+      src: ./resources/logstash.conf
+      dest: /etc/logstash/logstash.conf
+      owner: root
+      group: root
+      mode: 0644
+# - copy:
+#     src: ./resources/elasticsearch.yml
+#     dest: /etc/elasticsearch/elasticsearch.yml
+#     owner: root
+#     group: root
+#     mode: 0644
+# - copy:
+#     src: ./resources/grafana.ini
+#     dest: /etc/grafana/grafana.ini
+#     owner: root
+#     group: root
+#     mode: 0644
+# - copy:
+#     src: ./resources/kibana.yml
+#     dest: /etc/kibana/kibana.yml
+#     owner: root
+#     group: root
+#     mode: 0644
+# - copy:
+#     src: ./resources/kapacitor.conf
+#     dest: /etc/kapacitor/kapacitor.conf
+#     owner: root
+#     group: root
+#     mode: 0644

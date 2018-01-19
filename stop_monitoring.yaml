@@ -7,3 +7,8 @@
       systemd: state=stopped name=influxdb 
     - name: Stop Grafana
       systemd: state=stopped name=grafana-server
+    - name: Stop ElasticSearch
+      systemd: state=stopped name=elasticsearch
+    - name: Stop Kibana
+      systemd: state=stopped name=kibana
+
